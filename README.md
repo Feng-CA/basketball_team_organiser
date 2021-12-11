@@ -63,3 +63,18 @@ You must include:
 - steps to install the application
 - any dependencies required by the application to operate
 - any system/hardware requirements
+
+### installation guide
+- make sure Ruby version 3.0.2 installed on the computer
+- on the terminal proceed to local repository where you store the applicaion source code
+- run ./install-dependencies.sh to intall all required gems.
+- installation completed
+
+### dependencies requirement
+- gem colorize
+- gem tty-prompt
+- gem rspec
+
+### system/hardware requirement
+- Windows 10
+- hardware has not perticular requirement
