@@ -18,4 +18,10 @@ class Team
         # update_array = @names_array.map { |name| name == input_1 ? input_2 : name }
         return @names_array
     end
+
+    def random_name_order
+        @names_array.shuffle
+    end 
+
+    
 end
