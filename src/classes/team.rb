@@ -8,9 +8,20 @@ class Team
         
     end
 
-    def substitution(input)
-        @names_array.push(input)
-        # team.map { |name| name == input_1 ? 'input_2' : name }
-        # return team
+    def substitution(input_1, input_2)
+
+        # if @names_array.include? (input_1)
+        #     begin
+        #         puts "#{input_1} is on our team list."
+        #         @names_array.delete(input_1)
+        #     rescue ArgumentError
+        #         puts "Please check your typing"
+        #         retry
+        #     end
+        # end
+        @names_array.delete(input_1)
+        @names_array.push(input_2)
+        # update_array = @names_array.map { |name| name == input_1 ? input_2 : name }
+        return @names_array
     end
 end
