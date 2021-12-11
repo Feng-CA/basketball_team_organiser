@@ -5,7 +5,7 @@ require_relative "./classes/team.rb"
 
 prompt = TTY::Prompt.new
 
-# team = ["Leo", "James", "Frank", "Michael", "Eric", "Richard"]
+# team = ["Leo", "James", "Frank", "Michael", "Eric", "Richard", "Min", "Nick","Feng", "Will", "Kevin", "Eason", "Ban", "Philip", "Xiao"]
 team = Team.new("Test Team")
 #MENU SYSTEM
 while true
@@ -23,7 +23,7 @@ while true
         pp new_team
     when 2 
         puts "Selected Random Teams option".colorize(:blue)
-        
+            team.output_random_teams
     when 3 
         puts "Decided ball possession option".colorize(:yellow)
     when 4
