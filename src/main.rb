@@ -23,6 +23,7 @@ while true
         pp new_team
     when 2 
         puts "Selected Random Teams option".colorize(:blue)
+        
     when 3 
         puts "Decided ball possession option".colorize(:yellow)
     when 4
