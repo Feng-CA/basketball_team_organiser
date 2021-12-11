@@ -19,6 +19,11 @@ class Team
         #         retry
         #     end
         # end
+
+        until @names_array.include? input_1 do
+            puts "Plese type the correct name of the player to delete:"
+            input_1 = gets.chomp.capitalize   
+        end
         @names_array.delete(input_1)
         @names_array.push(input_2)
         # update_array = @names_array.map { |name| name == input_1 ? input_2 : name }

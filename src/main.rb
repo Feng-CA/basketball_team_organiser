@@ -14,9 +14,9 @@ while true
     case input 
     when 1 
         puts "Substituted Player option".colorize(:green)
-        puts "Type name of member to delete:"
+        puts "Type name of the player to delete:"
         input_1 = gets.chomp.capitalize
-        puts "Type name of member to add:"
+        puts "Type name of the player to add:"
         input_2 = gets.chomp.capitalize
         new_team = team.substitution(input_1, input_2)
 
