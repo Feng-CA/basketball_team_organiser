@@ -3,12 +3,12 @@ prompt = TTY::Prompt.new
 require_relative '../validation-error.rb'
 class Team
     attr_accessor :name
-    attr_reader :names_array
+    attr_accessor :names_array
 
-    def initialize(name)
+    def initialize(name, file_path)
         @name = name
-        @names_array = ["Leo", "James", "Frank", "Michael", "Eric", "Richard", "Min", "Nick", "Feng", "Will", "Kevin", "Eason", "Ban", "Philip", "Xiao"]
-        
+        @file_path = file_path
+        @names_array = self.path_to_list 
     end
 
     def substitution(input_1, input_2)
@@ -18,9 +18,7 @@ class Team
         end
         @names_array.delete(input_1)
         @names_array.push(input_2)
-        # update_array = @names_array.map { |name| name == input_1 ? input_2 : name }
-        return @names_array.join(', ')
-        # puts "Our team players are #{@names_array.join(', ')}."
+        return @names_array.join(', ')   
     end
 
     def random_name_order
@@ -53,8 +51,6 @@ class Team
         rescue => e
             puts "Please only enter 0 or 1."
             retry
-
-        # pp answer
         ensure
             puts "This is a valid number."
         end
@@ -62,10 +58,32 @@ class Team
 
     def output_coin_flip
         if coin_flip == [0, 1].sample
-            puts "You are the winner!"
+            puts "Congratuations! You get the ball!"
         else 
             puts "Sorry! Good luck next time."
         end
     end
+
+    def save
+        File.open(@file_path, "w+") do |f| 
+                f.puts(@names_array)
+        end 
+    end 
+
+    private 
+
+    def path_to_list
+        begin
+            list_array = File.readlines(@file_path).map(&:strip)
+        rescue
+            puts "Invalid path! Just creating a new file for you."
+            pp @file_path
+            File.open(@file_path, "w") do |file| 
+                file.write("")
+            end
+            list_array = []
+        end 
+        return array
+    end 
     
 end
