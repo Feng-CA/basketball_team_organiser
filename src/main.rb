@@ -26,6 +26,7 @@ while true
             team.output_random_teams
     when 3 
         puts "Decided ball possession option".colorize(:yellow)
+            team.output_coin_flip
     when 4
         puts "Goodbye".colorize(:cyan)
         exit
