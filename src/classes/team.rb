@@ -1,3 +1,6 @@
+require "tty-prompt"
+prompt = TTY::Prompt.new
+require_relative '../validation-error.rb'
 class Team
     attr_accessor :name
     attr_reader :names_array
@@ -16,7 +19,8 @@ class Team
         @names_array.delete(input_1)
         @names_array.push(input_2)
         # update_array = @names_array.map { |name| name == input_1 ? input_2 : name }
-        return @names_array
+        return @names_array.join(', ')
+        # puts "Our team players are #{@names_array.join(', ')}."
     end
 
     def random_name_order
@@ -34,5 +38,34 @@ class Team
         puts "Team one and team two will be on the floor first. Team three will be on the bench."   
     end 
 
+    def coin_flip
+        
+        begin
+            puts "Please choose 0 for heads or 1 for tails."
+            answer = Integer(gets.chomp)
+            if answer != 0 && answer != 1
+                raise ValidationError.new("Please enter 0 or 1")
+            end
+            return answer
+        rescue ArgumentError
+            puts "Please enter only numbers."
+            retry
+        rescue => e
+            puts "Please only enter 0 or 1."
+            retry
+
+        # pp answer
+        ensure
+            puts "This is a valid number."
+        end
+    end
+
+    def output_coin_flip
+        if coin_flip == [0, 1].sample
+            puts "You are the winner!"
+        else 
+            puts "Sorry! Good luck next time."
+        end
+    end
     
 end
