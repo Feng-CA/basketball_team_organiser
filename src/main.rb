@@ -19,12 +19,7 @@ while true
     when 1 
         puts "Substitute Player option".colorize(:green)
         puts team.names_array.join(', ')
-        puts "Type name of the player to delete:"
-        input_1 = gets.chomp.capitalize
-        puts "Type name of the player to add:"
-        input_2 = gets.chomp.capitalize
-        new_team = team.substitution(input_1, input_2)
-        pp new_team
+        team.substitution
     when 2 
         puts "Random Teams option".colorize(:blue)
             team.output_random_teams

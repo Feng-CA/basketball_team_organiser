@@ -11,14 +11,25 @@ class Team
         @names_array = self.path_to_list 
     end
 
-    def substitution(input_1, input_2)
+    def substitution
+        puts "Type name of the player to delete:"
+        input_1 = gets.chomp.capitalize
+         
         until @names_array.include? input_1 do
             puts "Plese type the correct name of the player to delete:"
             input_1 = gets.chomp.capitalize   
         end
         @names_array.delete(input_1)
+
+        puts "Type name of the player to add:"
+        input_2 = gets.chomp.capitalize
+        while @names_array.include? input_2 do
+            puts "Sorry, we already have the same name, please include the last name initial of the player to add:"
+            input_2 = gets.chomp.capitalize   
+        end
         @names_array.push(input_2)
-        return @names_array.join(', ')   
+     
+        puts @names_array.join(', ')   
     end
 
     def random_name_order
@@ -83,7 +94,7 @@ class Team
             end
             list_array = []
         end 
-        return array
+        return list_array
     end 
     
 end
