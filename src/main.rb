@@ -9,6 +9,7 @@ prompt = TTY::Prompt.new
 team = Team.new("Test Team")
 #MENU SYSTEM
 while true
+    output_team_length(team.names_array.length)
     puts "Pick 1) for substitution , Pick 2) for Random teams, Pick 3) to decide ball possession, Pick 4) to exit"
     input = gets.chomp.to_i
     case input 
