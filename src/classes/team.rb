@@ -11,25 +11,44 @@ class Team
         @names_array = self.path_to_list 
     end
 
-    def substitution
-        puts "Type name of the player to delete:"
-        input_1 = gets.chomp.capitalize
-         
-        until @names_array.include? input_1 do
-            puts "Plese type the correct name of the player to delete:"
-            input_1 = gets.chomp.capitalize   
+    def delete_name
+        begin
+            puts "Type name of the player to delete:"
+            input_1 = gets.chomp.capitalize
+            unless @names_array.include? input_1
+                raise ValidationError.new("Please type the corrent name of the player to delete:")
+            end
+        rescue => e
+            until @names_array.include? input_1 do
+                puts e.message
+                input_1 = gets.chomp.capitalize 
+            end
         end
+        
         @names_array.delete(input_1)
+    end
 
-        puts "Type name of the player to add:"
-        input_2 = gets.chomp.capitalize
-        while @names_array.include? input_2 do
-            puts "Sorry, we already have the same name, please include the last name initial of the player to add:"
-            input_2 = gets.chomp.capitalize   
+    def add_name
+        begin
+            puts "Type name of the player to add:"
+            input_2 = gets.chomp.capitalize
+            if @names_array.include? input_2
+                raise ValidationError.new("Sorry, we already have the same name, please include the last name initial of the player to add:")
+            end
+        rescue => e
+            while @names_array.include? input_2 do
+                puts e.message
+                input_2 = gets.chomp.capitalize 
+            end  
         end
         @names_array.push(input_2)
      
         puts @names_array.join(', ')   
+    end
+
+    def substitution
+        delete_name
+        add_name   
     end
 
     def random_name_order
@@ -53,14 +72,14 @@ class Team
             puts "Please choose 0 for heads or 1 for tails."
             answer = Integer(gets.chomp)
             if answer != 0 && answer != 1
-                raise ValidationError.new("Please enter 0 or 1")
+                raise ValidationError.new("Please only enter 0 or 1")
             end
             return answer
         rescue ArgumentError
             puts "Please enter only numbers."
             retry
         rescue => e
-            puts "Please only enter 0 or 1."
+            puts e.message
             retry
         ensure
             puts "This is a valid number."

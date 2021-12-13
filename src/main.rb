@@ -12,7 +12,7 @@ user_name = prompt.ask("Hello, what's your name?")
 #MENU SYSTEM
 while true
     output_team_length(team.names_array.length)
-    puts "#{user_name.capitalize}, please select 1) for substitution , Pick 2) for Random teams, Pick 3) to decide ball possession, Pick 4) to exit"
+    puts "Hi #{user_name.capitalize}, please select 1) for player substitution, select 2) for Random teams, select 3) to decide ball possession, select 4) to exit"
     input = gets.chomp.to_i
 
     case input 
