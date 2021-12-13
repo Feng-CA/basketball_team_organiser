@@ -55,15 +55,19 @@ class Team
         @names_array.shuffle
     end 
 
+    def team_result(number, team_numbar)
+        puts "Team #{number} players are #{team_numbar.join(', ')}.".colorize(:light_green)
+    end
+
     def output_random_teams
-        output_name_order = random_name_order
+        output_name_order = random_name_order   
         team_one = output_name_order[0..4]
-        puts "Team one players are #{team_one.join(', ')}.".colorize(:light_green)
+        team_result(1, team_one)
         team_two = output_name_order[5..9]
-        puts "Team two players are #{team_two.join(', ')}.".colorize(:light_blue)
+        team_result(2, team_two)
         team_three = output_name_order[10...15]
-        puts "Team three players are #{team_three.join(', ')}.".colorize(:light_yellow)
-        puts "Team one and team two will be on the floor first. Team three will be on the bench.".colorize(:light_cyan)   
+        team_result(3, team_three)
+        puts "Team 1 and Team 2 will be on the floor first. Team 3 will be on the bench.".colorize(:light_cyan)   
     end 
 
     def coin_flip

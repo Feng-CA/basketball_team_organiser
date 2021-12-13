@@ -9,6 +9,7 @@ prompt = TTY::Prompt.new
 team = Team.new("Test Team", "./data/team-list.txt")
 team_array = team.names_array.clone
 prompt.ask("Hello, what's your name?").colorize(:light_cyan)
+
 #MENU SYSTEM
 while true
     output_team_length(team.names_array.length)
@@ -17,14 +18,14 @@ while true
 
     case input 
     when 1 
-        puts "Substitute Player option".colorize(:light_green)
+        puts "Player substitution option".colorize(:light_green)
         puts team.names_array.join(', ').colorize(:light_blue)
         team.substitution
     when 2 
         puts "Random Teams option".colorize(:light_blue)
             team.output_random_teams
     when 3 
-        puts "ball possession option".colorize(:light_magenta)
+        puts "Ball possession option".colorize(:light_magenta)
             team.output_coin_flip
     when 4
         if team_array.to_set != team.names_array.to_set
