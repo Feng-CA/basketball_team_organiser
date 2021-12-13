@@ -8,31 +8,31 @@ prompt = TTY::Prompt.new
 
 team = Team.new("Test Team", "./data/team-list.txt")
 team_array = team.names_array.clone
-user_name = prompt.ask("Hello, what's your name?")
+prompt.ask("Hello, what's your name?").colorize(:light_cyan)
 #MENU SYSTEM
 while true
     output_team_length(team.names_array.length)
-    puts "Hi #{user_name.capitalize}, please select 1) for player substitution, select 2) for Random teams, select 3) to decide ball possession, select 4) to exit"
+    puts "Please select 1) for player substitution, select 2) for Random teams, select 3) to decide ball possession, select 4) to exit".colorize(:light_yellow)
     input = gets.chomp.to_i
 
     case input 
     when 1 
-        puts "Substitute Player option".colorize(:green)
-        puts team.names_array.join(', ')
+        puts "Substitute Player option".colorize(:light_green)
+        puts team.names_array.join(', ').colorize(:light_blue)
         team.substitution
     when 2 
-        puts "Random Teams option".colorize(:blue)
+        puts "Random Teams option".colorize(:light_blue)
             team.output_random_teams
     when 3 
-        puts "ball possession option".colorize(:yellow)
+        puts "ball possession option".colorize(:light_magenta)
             team.output_coin_flip
     when 4
         if team_array.to_set != team.names_array.to_set
             save_file_option(team)
         end
-        puts "Goodbye! See you next time.".colorize(:cyan)
+        puts "Goodbye! See you next time.".colorize(:light_cyan)
         exit
     else
-        puts "Please pick 1, 2, 3 or 4".colorize(:red)
+        puts "Please pick 1, 2, 3 or 4".colorize(:light_red)
     end
 end

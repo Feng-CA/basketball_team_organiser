@@ -13,37 +13,37 @@ class Team
 
     def delete_name
         begin
-            puts "Type name of the player to delete:"
+            puts "Please type the name of the player to delete:".colorize(:light_yellow)
             input_1 = gets.chomp.capitalize
             unless @names_array.include? input_1
                 raise ValidationError.new("Please type the corrent name of the player to delete:")
             end
         rescue => e
             until @names_array.include? input_1 do
-                puts e.message
+                puts e.message.colorize(:light_red)
                 input_1 = gets.chomp.capitalize 
             end
         end
-        
+
         @names_array.delete(input_1)
     end
 
     def add_name
         begin
-            puts "Type name of the player to add:"
+            puts "Type name of the player to add:".colorize(:light_green)
             input_2 = gets.chomp.capitalize
             if @names_array.include? input_2
                 raise ValidationError.new("Sorry, we already have the same name, please include the last name initial of the player to add:")
             end
         rescue => e
             while @names_array.include? input_2 do
-                puts e.message
+                puts e.message.colorize(:light_red)
                 input_2 = gets.chomp.capitalize 
             end  
         end
         @names_array.push(input_2)
      
-        puts @names_array.join(', ')   
+        puts @names_array.join(', ').colorize(:light_blue)  
     end
 
     def substitution
@@ -58,39 +58,39 @@ class Team
     def output_random_teams
         output_name_order = random_name_order
         team_one = output_name_order[0..4]
-        puts "Team one players are #{team_one.join(', ')}."
+        puts "Team one players are #{team_one.join(', ')}.".colorize(:light_green)
         team_two = output_name_order[5..9]
-        puts "Team two players are #{team_two.join(', ')}."
+        puts "Team two players are #{team_two.join(', ')}.".colorize(:light_blue)
         team_three = output_name_order[10...15]
-        puts "Team three players are #{team_three.join(', ')}."
-        puts "Team one and team two will be on the floor first. Team three will be on the bench."   
+        puts "Team three players are #{team_three.join(', ')}.".colorize(:light_yellow)
+        puts "Team one and team two will be on the floor first. Team three will be on the bench.".colorize(:light_cyan)   
     end 
 
     def coin_flip
         
         begin
-            puts "Please choose 0 for heads or 1 for tails."
+            puts "Please choose 0 for heads or 1 for tails.".colorize(:light_blue)
             answer = Integer(gets.chomp)
             if answer != 0 && answer != 1
                 raise ValidationError.new("Please only enter 0 or 1")
             end
             return answer
         rescue ArgumentError
-            puts "Please enter only numbers."
+            puts "Please enter only numbers.".colorize(:light_red)
             retry
         rescue => e
-            puts e.message
+            puts e.message.colorize(:light_red)
             retry
         ensure
-            puts "This is a valid number."
+            puts "This is a valid number.".colorize(:light_cyan)
         end
     end
 
     def output_coin_flip
         if coin_flip == [0, 1].sample
-            puts "Congratuations! You get the ball!"
+            puts "Congratuations! You get the ball!".colorize(:light_blue)
         else 
-            puts "Sorry! Good luck next time."
+            puts "Sorry! Good luck next time.".colorize(:light_yellow)
         end
     end
 
@@ -106,7 +106,7 @@ class Team
         begin
             list_array = File.readlines(@file_path).map(&:strip)
         rescue
-            puts "Invalid path! Just creating a new file for you."
+            puts "Invalid path! Just creating a new file for you.".colorize(:light_red)
             pp @file_path
             File.open(@file_path, "w") do |file| 
                 file.write("")
