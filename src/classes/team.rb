@@ -60,12 +60,12 @@ class Team
     end
 
     def output_random_teams
-        output_name_order = random_name_order   
-        team_one = output_name_order[0..4]
+        output_team_order = random_name_order.each_slice(5).to_a  
+        team_one = output_team_order[0]
         team_result(1, team_one)
-        team_two = output_name_order[5..9]
+        team_two = output_team_order[1]
         team_result(2, team_two)
-        team_three = output_name_order[10...15]
+        team_three = output_team_order[2]
         team_result(3, team_three)
         puts "Team 1 and Team 2 will be on the floor first. Team 3 will be on the bench.".colorize(:light_cyan)   
     end 
