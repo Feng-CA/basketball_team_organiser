@@ -116,6 +116,9 @@ class Team
                 file.write("")
             end
             list_array = []
+            until list_array.length = 15 do
+                team.add_name
+            end
         end 
         return list_array
     end 

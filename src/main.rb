@@ -4,7 +4,13 @@ require_relative "./methods.rb"
 require_relative "./classes/team.rb"
 require_relative './validation-error.rb'
 
+
 prompt = TTY::Prompt.new
+require 'date'
+
+current_datetime = DateTime.now
+current_datetime.strftime "%d/%m/%Y %H:%M"
+puts "Current time : #{current_datetime.strftime "%d/%m/%Y %H:%M"}".colorize(:light_cyan)
 puts "\n\n"
 puts "
 ██████╗░░█████╗░░██████╗██╗░░██╗███████╗████████╗██████╗░░█████╗░██╗░░░░░██╗░░░░░  ████████╗███████╗░█████╗░███╗░░░███╗
