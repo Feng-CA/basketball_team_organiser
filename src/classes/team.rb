@@ -114,10 +114,14 @@ class Team
             pp @file_path
             File.open(@file_path, "w") do |file| 
                 file.write("")
-            end
+            
             list_array = []
-            until list_array.length = 15 do
-                team.add_name
+            n = 0
+                for n in 0...15 do
+                puts "Please add player name:"
+                input = String(gets.chomp)
+                list_array << input.capitalize
+                end
             end
         end 
         return list_array
