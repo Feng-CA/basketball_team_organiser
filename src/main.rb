@@ -23,19 +23,19 @@ if ARGV.length > 0
         puts "-help                           show this message"
         puts "-@                              print the copyright"
         puts "-info                           show the required ruby version to run this app"
-        puts "-path                           show the default file path"
+        puts "-p                              show the default file path"
         puts "-path ./data/filename.txt       open an existing file or create a new file"
         exit
     when '-info'
-        puts "This program is running ruby #{RUBY_VERSION}."
+        puts "This program is running ruby #{RUBY_VERSION}.".colorize(:light_cyan)
     when '-@'
-        puts "This application is written by Feng Mao."
+        puts "This application is designed by Feng Mao.".colorize(:light_green)
+    when '-p'
+        puts "Default path is : ./data/team-list.txt".colorize(:light_yellow)
     when '-path'
-        puts "Default path is : ./data/team-list.txt"
-    when '-path ./data/filename.txt'
         team = Team.new(rest[1] ||= "Default Team", rest[0])
     else
-        puts "Invalid argument, please check README documentation."
+        puts "Invalid argument, please check README documentation.".colorize(:light_red)
         exit
     end
 end

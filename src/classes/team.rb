@@ -99,8 +99,8 @@ class Team
     end
 
     def save
-        File.open(@file_path, "w+") do |f| 
-                f.puts(@names_array)
+        File.open(@file_path, "w+") do |file| 
+                file.puts(@names_array)
         end 
     end 
 
@@ -115,16 +115,28 @@ class Team
             File.open(@file_path, "w") do |file| 
                 file.write("")
             
-            list_array = []
-            n = 0
-                for n in 0...15 do
+                list_array = []
+               
+                until list_array.length == 15 do
                 puts "Please add player name:"
-                input = String(gets.chomp)
-                list_array << input.capitalize
+                input = String(gets.chomp).capitalize
+                
+                if list_array.include? input
+                    puts "Sorry, we already have the same name, please include the last name initial of the player to add:".colorize(:light_red)
+                else
+                    list_array << input
                 end
+                
+                end
+
             end
-        end 
+        end
+
+        File.open(@file_path, "w+") do |file| 
+            file.puts(list_array)
+        end
         return list_array
+       
     end 
     
 end
