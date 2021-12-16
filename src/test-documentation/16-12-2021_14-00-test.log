@@ -1,0 +1,15 @@
+
+Team
+  .substitution
+    should be defined
+[0;93;49mPlease type the name of the player to delete:[0m
+[0;92;49mPlease type the name of the player to add:[0m
+[0;94;49mFrank, Min, James, Will, Eason, Jason[0m
+    should has same number of players as @names_array
+  .random_name_order
+    should be defined
+    should return an array
+
+Finished in 0.03454 seconds (files took 0.98887 seconds to load)
+4 examples, 0 failures
+

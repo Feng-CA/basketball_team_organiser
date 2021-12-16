@@ -1,3 +1,4 @@
+require "colorize"
 require "tty-prompt"
 prompt = TTY::Prompt.new
 require_relative '../validation-error.rb'
@@ -11,7 +12,7 @@ class Team
         @names_array = self.path_to_list 
     end
 
-    def delete_name
+    def delete_name(input_1)
         begin
             puts "Please type the name of the player to delete:".colorize(:light_yellow)
             input_1 = gets.chomp.capitalize
@@ -28,9 +29,9 @@ class Team
         @names_array.delete(input_1)
     end
 
-    def add_name
+    def add_name(input_2)
         begin
-            puts "Type name of the player to add:".colorize(:light_green)
+            puts "Please type the name of the player to add:".colorize(:light_green)
             input_2 = gets.chomp.capitalize
             if @names_array.include? input_2
                 raise ValidationError.new("Sorry, we already have the same name, please include the last name initial of the player to add:")
@@ -47,8 +48,8 @@ class Team
     end
 
     def substitution
-        delete_name
-        add_name   
+        delete_name(input_1)
+        add_name(input_2)
     end
 
     def random_name_order
@@ -73,7 +74,7 @@ class Team
     def coin_flip
         
         begin
-            puts "Please choose 0 for heads or 1 for tails.".colorize(:light_blue)
+            puts "Let's play coin flipping. Please choose 0 for heads or 1 for tails. The winner will get the ball.".colorize(:light_blue)
             answer = Integer(gets.chomp)
             if answer != 0 && answer != 1
                 raise ValidationError.new("Please only enter 0 or 1")
@@ -86,7 +87,7 @@ class Team
             puts e.message.colorize(:light_red)
             retry
         ensure
-            puts "This is a valid number.".colorize(:light_cyan)
+            puts "This is a valid guess.".colorize(:light_cyan)
         end
     end
 
@@ -126,7 +127,7 @@ class Team
                 else
                     list_array << input
                 end
-                
+
                 end
 
             end

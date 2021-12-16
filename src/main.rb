@@ -65,7 +65,12 @@ while true
         if team_array.to_set != team.names_array.to_set
             save_file_option(team)
         end
-        puts "Goodbye! See you next time.".colorize(:light_cyan)
+        puts "
+        ╔══╗────╔╦╗────╔╗╔═╗──────────────────╔╗─╔╗╔╗
+        ║╔═╬═╦═╦╝║╚╦╦╦═╣║║═╬═╦═╗╔╦╦═╦╦╗╔═╦╦═╦╦╣╚╗║╚╬╬══╦═╗
+        ║╚╗║╬║╬║╬║╬║║║╩╣║╠═║╩╣╩╣║║║╬║║║║║║║╩╬║╣╔╣║╔╣║║║║╩╬╗
+        ╚══╩═╩═╩═╩═╬╗╠═╬╣╚═╩═╩═╝╠╗╠═╩═╝╚╩═╩═╩╩╩═╝╚═╩╩╩╩╩═╩╝
+        ───────────╚═╝─╚╝───────╚═╝".colorize(:light_cyan)
         exit
     else
         puts "Please pick 1, 2, 3 or 4".colorize(:light_red)
