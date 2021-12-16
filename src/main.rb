@@ -42,12 +42,12 @@ end
 
 team ||= Team.new("Test Team", "./data/team-list.txt")
 team_array = team.names_array.clone
-prompt.ask("Hello, what's your name?".colorize(:light_cyan))
+answer = prompt.ask("Hello, what's your name?".colorize(:light_cyan))
 
 #MENU SYSTEM
 while true
     output_team_length(team.names_array.length)
-    puts "Please select 1) for player substitution, select 2) for Random teams, select 3) to decide ball possession, select 4) to exit".colorize(:light_yellow)
+    puts "#{answer.capitalize}.Please select 1) for player substitution, select 2) for Random teams, select 3) to decide ball possession, select 4) to exit".colorize(:light_yellow)
     input = gets.chomp.to_i
 
     case input 
@@ -65,12 +65,7 @@ while true
         if team_array.to_set != team.names_array.to_set
             save_file_option(team)
         end
-        puts "
-        ╔══╗────╔╦╗────╔╗╔═╗──────────────────╔╗─╔╗╔╗
-        ║╔═╬═╦═╦╝║╚╦╦╦═╣║║═╬═╦═╗╔╦╦═╦╦╗╔═╦╦═╦╦╣╚╗║╚╬╬══╦═╗
-        ║╚╗║╬║╬║╬║╬║║║╩╣║╠═║╩╣╩╣║║║╬║║║║║║║╩╬║╣╔╣║╔╣║║║║╩╬╗
-        ╚══╩═╩═╩═╩═╬╗╠═╬╣╚═╩═╩═╝╠╗╠═╩═╝╚╩═╩═╩╩╩═╝╚═╩╩╩╩╩═╩╝
-        ───────────╚═╝─╚╝───────╚═╝".colorize(:light_cyan)
+        puts artii.asciify('Goodbye! See you next time.').colorize(:light_cyan)
         exit
     else
         puts "Please pick 1, 2, 3 or 4".colorize(:light_red)

@@ -12,44 +12,44 @@ class Team
         @names_array = self.path_to_list 
     end
 
-    def delete_name(input_1)
+    def delete_name(input)
         begin
             puts "Please type the name of the player to delete:".colorize(:light_yellow)
-            input_1 = gets.chomp.capitalize
-            unless @names_array.include? input_1
+            input = gets.chomp.capitalize
+            unless @names_array.include? input
                 raise ValidationError.new("Please type the corrent name of the player to delete:")
             end
         rescue => e
-            until @names_array.include? input_1 do
+            until @names_array.include? input do
                 puts e.message.colorize(:light_red)
-                input_1 = gets.chomp.capitalize 
+                input = gets.chomp.capitalize 
             end
         end
 
-        @names_array.delete(input_1)
+        @names_array.delete(input)
     end
 
-    def add_name(input_2)
+    def add_name(input)
         begin
             puts "Please type the name of the player to add:".colorize(:light_green)
-            input_2 = gets.chomp.capitalize
-            if @names_array.include? input_2
+            input = gets.chomp.capitalize
+            if @names_array.include? input
                 raise ValidationError.new("Sorry, we already have the same name, please include the last name initial of the player to add:")
             end
         rescue => e
-            while @names_array.include? input_2 do
+            while @names_array.include? input do
                 puts e.message.colorize(:light_red)
-                input_2 = gets.chomp.capitalize 
+                input = gets.chomp.capitalize 
             end  
         end
-        @names_array.push(input_2)
+        @names_array.push(input)
      
         puts @names_array.join(', ').colorize(:light_blue)  
     end
 
     def substitution
-        delete_name(input_1)
-        add_name(input_2)
+        delete_name(name)
+        add_name(name)
     end
 
     def random_name_order
@@ -92,7 +92,7 @@ class Team
     end
 
     def output_coin_flip
-        if coin_flip == [0, 1].sample
+        if coin_flip == [0, 1, 0, 1].sample
             puts "Congratuations! You get the ball!".colorize(:light_blue)
         else 
             puts "Sorry! Good luck next time.".colorize(:light_yellow)
