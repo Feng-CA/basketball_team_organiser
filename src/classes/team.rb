@@ -56,18 +56,18 @@ class Team
         @names_array.shuffle
     end 
 
-    def team_result(number, team_numbar)
-        puts "Team #{number} players are #{team_numbar.join(', ')}.".colorize(:light_green)
+    def squad_result(number, squad_numbar)
+        puts "Squad #{number} players are #{squad_numbar.join(', ')}.".colorize(:light_green)
     end
 
-    def output_random_teams
+    def output_random_squads
         output_team_order = random_name_order.each_slice(5).to_a  
-        team_one = output_team_order[0]
-        team_result(1, team_one)
-        team_two = output_team_order[1]
-        team_result(2, team_two)
-        team_three = output_team_order[2]
-        team_result(3, team_three)
+        squad_one = output_team_order[0]
+        squad_result(1, squad_one)
+        squad_two = output_team_order[1]
+        squad_result(2, squad_two)
+        squad_three = output_team_order[2]
+        squad_result(3, squad_three)
         puts "Team 1 and Team 2 will be on the floor first. Team 3 will be on the bench.".colorize(:light_cyan)   
     end 
 

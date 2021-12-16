@@ -47,7 +47,7 @@ answer = prompt.ask("Hello, what's your name?".colorize(:light_cyan))
 #MENU SYSTEM
 while true
     output_team_length(team.names_array.length)
-    puts "#{answer.capitalize}.Please select 1) for player substitution, select 2) for Random teams, select 3) to decide ball possession, select 4) to exit".colorize(:light_yellow)
+    puts "#{answer.capitalize}.Please select 1) for player substitution, select 2) for Random squads, select 3) to decide ball possession, select 4) to exit".colorize(:light_yellow)
     input = gets.chomp.to_i
 
     case input 
@@ -56,8 +56,8 @@ while true
         puts team.names_array.join(', ').colorize(:light_blue)
         team.substitution
     when 2 
-        puts "Random Teams option".colorize(:light_blue)
-            team.output_random_teams
+        puts "Random squads option".colorize(:light_blue)
+            team.output_random_squads
     when 3 
         puts "Ball possession option".colorize(:light_magenta)
             team.output_coin_flip
