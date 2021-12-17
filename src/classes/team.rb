@@ -74,7 +74,7 @@ class Team
     def coin_flip
         
         begin
-            puts "Let's play coin flipping. Please choose 0 for heads or 1 for tails. The winner will get the ball.".colorize(:light_blue)
+            puts "Let's play coin flipping. Please choose 0 for heads or 1 for tails. The winner will get the ball.".colorize(:light_cyan)
             answer = Integer(gets.chomp)
             if answer != 0 && answer != 1
                 raise ValidationError.new("Please only enter 0 or 1")
@@ -92,8 +92,8 @@ class Team
     end
 
     def output_coin_flip
-        if coin_flip == [0, 1, 0, 1].sample
-            puts "Congratuations! You get the ball!".colorize(:light_blue)
+        if coin_flip == [0, 1, 0, 1, 0, 1].sample
+            puts "Congratuations! You get the ball!".colorize(:light_green)
         else 
             puts "Sorry! Good luck next time.".colorize(:light_yellow)
         end
