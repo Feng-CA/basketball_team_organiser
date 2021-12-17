@@ -1,6 +1,7 @@
 # Ruby Basketball Team Organiser
 
 ## R3. Provide full attribution to referenced sources (where applicable)
+
 ### References
 <a id="1">[How to install Linux Bash on Windows 10]</a> 
 Prakash, A. (2020, October 29). How to Install Linux Bash Shell on Windows 10. It’s FOSS. https://itsfoss.com/install-bash-on-windows/
@@ -18,9 +19,9 @@ This is a link to my source control repository : [Feng-CA/basketball_team_organi
 - explain how a member of the target audience will use it
 
 The purpose and scope of the terminal application
-- This application can help the management of a basketball team to organise the team players smoothly in an activity day. It enables the fairness and transparency of the training activities. It can help the leader to replace existing player with substitution; to divide evenly the 15 players into 3 squads and select first two squads to play on the floor; to decide which squad wins the ball possession before the game or disputs emerged; to create new file to store another team list.
+- This application can help the management of a basketball team to organise the team players efficiently in an activity day. It enables the fairness and transparency of the training activities. The features of this application can help the team leader to replace existing player with substitution player; to divide evenly the 15 players into 3 squads and select first two squads randomly generated to play on the floor first; to decide which squad on the floor wins the ball possession before the game started or disputes emerged during the game; to create a new file to store another team list.
 
-- The target audience will be the member of management of the basketball team. He can simply run the application and choose one or more options which he want to proceed and follow the instruction prompted. If he is not sure where to go then can find more information on README documentation.
+- The target audience will be the leader of the basketball team. The user can simply run this application and choose one or more options which he want to proceed and follow the instruction prompted. If the user is not sure where to go then can find more information on README documentation.
 
 ## R6. Develop a list of features that will be included in the application. It must include:
 - at least THREE features
@@ -35,17 +36,19 @@ Consult with your educator to check your features are sufficient.
 
 ### Features
 - player substitution
-This feature allows the user to use a subsitution player to replace the existing player. Firstly user can  remove the player who can not come from the team list and then add the substitution to the team list. So we can keep 15 players in order to divide evenly into 3 squads.
+This feature allows the user to use a subsitution player to replace the existing player. Firstly the user can remove the existing player from the team list by applying name validation conditional control and then add the substitution player to the team list by applying another conditioanl control to avoid duplicate name. So this feature can maintain 15 players in the name list for the activity day.
 
 - random squads
-The user can randomly divide 15 players into 3 squads to play game. Each squad should have 5 players. These feature can also help user to decide the first and second squad will start the game on the floor. The third squad will be the ratation on the bench.
+The user can randomly divide 15 players into 3 squads to play game. Each squad will have 5 players. These feature can also help user to decide the first and second squad randomly generated will start the game on the floor. The third squad will be the ratation on the bench.
 
 - ball possession
-The use the coin flip game to decide which squard on the floor wins the ball possession. The winner of the guess will get the ball for his squard. Firstly the user gets two representives respectively from the two squads who will play on the floor. They can only choose one side of the coin either heads or tails. Then the application will randomly choose heads or tails compared to the player's guess. If one player guess is same as the game result. His squad wins the ball possession on the floor. The game can start now.
+This application uses the coin flip game to decide which squard on the floor wins the ball possession. The winner of the guess will get the ball for his squard. Firstly the user gets two representives respectively from the two squads who will play on the floor. They can only choose one side of the coin either heads or tails. Then the application will randomly choose heads or tails compared to the player's guess. If one player guess is same as the game random result. His squad wins the ball possession on the floor. In addition, the user can use this feature when a dispute emerged during the game.
 
-- save and create new team list
-    - The user can choose whether needs to save the substitution player before exit.
-    - The user can also create a new team list and save it to the data folder.
+- save and exit
+    - The user has an option to save the substitution player in the name list before exit.
+
+- create a new team list from command line interface
+    - The user can also create a new team list from command line interface, add 15 names to the new list by applying conditional control to avoid duplicate name then autosave it to the data folder.
 
 ## R7. Develop an outline of the user interaction and experience for the application.
 Your outline must include:
@@ -53,14 +56,15 @@ Your outline must include:
 - how the user will interact with / use each feature
 - how errors will be handled by the application and displayed to the user
 
-- The user can find all informations on the README file.
-- The user can choose each feature option according to what result he wants. Then the user can make decision afterwards.
-- To achive best user experience, all errors from the user's input will be handled internally. Each time of the input error happens, the etrminal will prompt the user to make correct input with hints until the application gets what it want to run.
+- The user can follow the prompt from terminal to choose what he want to do. If the user doesn't know then can find all the informations on the README file.
+- The user can choose each feature option according to what result the user want to achive. Then the user can make decision according to the output of options respectively.
+- To achive best user experience, all errors from the user's input will be handled internally. Each time of the input error emerges, the terminal will prompt the user to make correct input with hints until the application gets what it need to run.
 
 ## R8. Develop a diagram which describes the control flow of your application. Your diagram must:
 - show the workflow/logic and/or integration of the features in your application for each feature.
 - utilise a recognised format or set of conventions for a control flow diagram, such as UML.
 
+### This applicaion flow chart diagram
 <img src="./docs/Flowchart.jpeg" alt="flow chart" width= "#" height="#">
 
 ## R9. Develop an implementation plan which:
@@ -71,7 +75,7 @@ Your outline must include:
 *Utilise a suitable project management platform to track this implementation plan. Your checklists for each feature should have at least 5 items.*
 
 ### My inplementation plan - using Trello project management
-#### Features - tasks TBD
+#### Features - tasks to be done
 - Player substitution
     - checklist
         1. create and test a Team class and initializes instance variables (Duration: 0.5 hour)
@@ -119,6 +123,7 @@ Your outline must include:
         4. add 15 names to the array and ensure no same name repeat
         5. save the new file
 
+#### Screenshot of the Trello project management
 <img src="./docs/Trello_project_management.png" alt="flow chart" width= "#" height="#">
 
 ## R10. Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
@@ -129,10 +134,11 @@ You must include:
 - any system/hardware requirements
 
 ### installation guide
-- make sure Ruby version 3.0.2 installed on the computer - fellow the link to install [[Installing Ruby]](https://www.ruby-lang.org/en/documentation/installation/)
-- make sure Linux Bash shell installed on the coputer - fellow the link to install [[How to install Linux Bash on Windows 10]](https://itsfoss.com/install-bash-on-windows/)
-- on your Bash terminal please proceed to local repository where you store the applicaion's source code(src/)
-- To intall all required gems. Please type the following code:
+1. Make sure Ruby version 3.0.2 installed on the computer - fellow the link to install [[Installing Ruby]](https://www.ruby-lang.org/en/documentation/installation/)
+2. Make sure Linux Bash shell installed on the coputer - fellow the link to install [[How to install Linux Bash on Windows 10]](https://itsfoss.com/install-bash-on-windows/)
+3. On your Bash terminal please proceed to this applicaton root folder then go to the source code folder (src/)
+4. To intall all gems required for this anplication. Please type the following code:
+
 ```
 bash install-dependencies.sh
 ```
@@ -144,7 +150,7 @@ and then
 ```
 bundle install
 ```
-- All installation completed
+5. All installation completed
 
 ### dependencies requirement
 - gem colorize
@@ -159,7 +165,8 @@ bundle install
 - hardware has not perticular requirement
 
 ### how to use the application
-- Please proceed into the source code folder (src/) in your local repository which stores this application files, then type the following code in your Bash Terminal:
+- Please proceed into the source code folder (src/) of this application root folder, then type the following code in your Bash Terminal:
+
 ```
 ruby main.rb
 ```
@@ -171,7 +178,7 @@ bash run.sh
 ```
 ruby main.rb -path ./data/{Filename}.txt
 ```
-- You can type the following code to see some useful infomation:
+- You can also type the following code to see some useful infomation:
 ```
 ruby main.rb -help
 ```
