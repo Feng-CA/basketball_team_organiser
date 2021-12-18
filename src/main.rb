@@ -40,7 +40,7 @@ if ARGV.length > 0
     end
 end
 
-team ||= Team.new("Test Team", "./data/team-list.txt")
+team ||= Team.new("Default Team", "./data/team-list.txt")
 team_array = team.names_array.clone
 answer = prompt.ask("Hello, what's your name?".colorize(:light_cyan))
 

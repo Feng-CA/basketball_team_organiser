@@ -18,7 +18,7 @@ def save_file_option(team)
         puts question.colorize(:light_yellow)
         input = gets.chomp
         if input.downcase != "yes" && input.downcase != "no"
-            raise ValidationError.new("Please enter yes or no")
+            raise ValidationError.new("Please type yes or no.")
         end
         return input
     end
