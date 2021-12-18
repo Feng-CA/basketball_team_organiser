@@ -44,7 +44,7 @@ class Team
         end
         @names_array.push(input)
      
-        puts @names_array.join(', ').colorize(:light_blue)  
+        puts "The players are ".colorize(:light_blue) + @names_array.join(', ').colorize(:light_cyan)  
     end
 
     def substitution
@@ -56,19 +56,14 @@ class Team
         @names_array.shuffle
     end 
 
-    def squad_result(number, squad_numbar)
-        puts "Squad #{number} players are #{squad_numbar.join(', ')}.".colorize(:light_green)
-    end
-
     def output_random_squads
-        output_team_order = random_name_order.each_slice(5).to_a  
-        squad_one = output_team_order[0]
-        squad_result(1, squad_one)
-        squad_two = output_team_order[1]
-        squad_result(2, squad_two)
-        squad_three = output_team_order[2]
-        squad_result(3, squad_three)
-        puts "Team 1 and Team 2 will be on the floor first. Team 3 will be on the bench.".colorize(:light_cyan)   
+        output_squad_order = random_name_order.each_slice(5).to_a
+        squad_one = output_squad_order[0].join(', ')
+        squad_two = output_squad_order[1].join(', ')
+        squad_three = output_squad_order[2].join(', ')
+        table = TTY::Table.new(["squad numbar","player names"], [["1", squad_one], ["2", squad_two], ["3", squad_three]])
+        puts table.render(:ascii).colorize(:light_green)
+        puts "Squad 1 and Squad 2 will be on the floor first. Squad 3 will be on the bench.".colorize(:light_cyan)   
     end 
 
     def coin_flip
