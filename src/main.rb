@@ -2,7 +2,7 @@ require "colorize"
 require "tty-prompt"
 require "tty-table"
 require "artii"
-require 'date'
+require "date"
 require_relative "./methods.rb"
 require_relative "./classes/team.rb"
 require_relative './validation-error.rb'
