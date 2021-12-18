@@ -1,5 +1,6 @@
 require "colorize"
 require "tty-prompt"
+require "tty-table"
 require "artii"
 require 'date'
 require_relative "./methods.rb"
@@ -53,7 +54,7 @@ while true
     case input
     when 1 
         puts "Player substitution option".colorize(:light_green)
-        puts team.names_array.join(', ').colorize(:light_blue)
+        puts "The players are ".colorize(:light_blue) + team.names_array.join(', ').colorize(:light_magenta)
         team.substitution
     when 2 
         puts "Random squads option".colorize(:light_blue)
@@ -68,6 +69,6 @@ while true
         puts artii.asciify('Goodbye! See you next time.').colorize(:light_cyan)
         exit
     else
-        puts "Please pick 1, 2, 3 or 4".colorize(:light_red)
+        puts "Please pick 1, 2, 3 or 4.".colorize(:light_red)
     end
 end
