@@ -1,38 +1,9 @@
-# Ruby Basketball Team Organiser
+# Basketball Team Organiser - A Ruby Terminal Application
 
-## R3. Provide full attribution to referenced sources (where applicable)
-
-### References
-<a id="1">[How to install Linux Bash on Windows 10]</a> 
-Prakash, A. (2020, October 29). How to Install Linux Bash Shell on Windows 10. It’s FOSS. https://itsfoss.com/install-bash-on-windows/
-
-<a id="2">[Installing Ruby]</a>
-ruby-lang. (n.d.). Installing Ruby. Retrieved December 17, 2021, from https://www.ruby-lang.org/en/documentation/installation/
-
-## R4. Provide a link to your source control repository
-This is a link to my source control repository : [Feng-CA/basketball_team_organiser] (https://github.com/Feng-CA/basketball_team_organiser)
-
-## R5. Develop a statement of purpose and scope for your application. It must include:
-- describe at a high level what the application will do
-- identify the problem it will solve and explain why you are developing it
-- identify the target audience
-- explain how a member of the target audience will use it
-
-The purpose and scope of the terminal application
+### The purpose and scope of the terminal application
 - This application can help the management of a basketball team to organise the team players efficiently in an activity day. It enables the fairness and transparency of the training activities. The features of this application can help the team leader to replace existing player with substitution player; to divide evenly the 15 players into 3 squads and select first two squads randomly generated to play on the floor first; to decide which squad on the floor wins the ball possession before the game started or disputes emerged during the game; to create a new file to store another team list.
 
 - The target audience will be the leader of the basketball team. The user can simply run this application and choose one or more options which he want to proceed and follow the instruction prompted. If the user is not sure where to go then can find more information on README documentation.
-
-## R6. Develop a list of features that will be included in the application. It must include:
-- at least THREE features
-- describe each feature
-
-Note: Ensure that your features above allow you to demonstrate your understanding of the following language elements and concepts:
-- use of variables and the concept of variable scope
-- loops and conditional control structures
-- error handling
-
-Consult with your educator to check your features are sufficient.
 
 ### Features
 - player substitution
@@ -50,31 +21,13 @@ This application uses the coin flip game to decide which squard on the floor win
 - create a new team list from command line interface
     - The user can also create a new team list from command line interface, add 15 names to the new list by applying conditional control to avoid duplicate name then autosave it to the data folder.
 
-## R7. Develop an outline of the user interaction and experience for the application.
-Your outline must include:
-- how the user will find out how to interact with / use each feature
-- how the user will interact with / use each feature
-- how errors will be handled by the application and displayed to the user
-
+## An outline of the user interaction and experience for the application.
 - The user can follow the prompt from terminal to choose what he want to do. If the user doesn't know then can find all the informations on the README file.
 - The user can choose each feature option according to what result the user want to achive. Then the user can make decision according to the output of options respectively.
 - To achive best user experience, all errors from the user's input will be handled internally. Each time of the input error emerges, the terminal will prompt the user to make correct input with hints until the application gets what it need to run.
 
-## R8. Develop a diagram which describes the control flow of your application. Your diagram must:
-- show the workflow/logic and/or integration of the features in your application for each feature.
-- utilise a recognised format or set of conventions for a control flow diagram, such as UML.
 
-### This applicaion flow chart diagram
-<img src="./docs/Flowchart.jpeg" alt="flow chart" width= "#" height="#">
-
-## R9. Develop an implementation plan which:
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
-
-*Utilise a suitable project management platform to track this implementation plan. Your checklists for each feature should have at least 5 items.*
-
-### My inplementation plan - using Trello project management
+### The inplementation plan - using Trello project management
 #### Features - tasks to be done
 - Player substitution
     - checklist
@@ -122,15 +75,6 @@ Your outline must include:
         4. add 15 names to the array and ensure no same name repeat (Duration: 0.5 hour)
         5. find a way to save the new file (Duration: 0.1 hour)
 
-#### Screenshot of the Trello project management
-<img src="./docs/Trello_project_management.png" alt="flow chart" width= "#" height="#">
-
-## R10. Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
-
-You must include:
-- steps to install the application
-- any dependencies required by the application to operate
-- any system/hardware requirements
 
 ### installation guide
 1. Make sure Ruby version 3.0.2 installed on the computer - fellow the link to install [[Installing Ruby]](https://www.ruby-lang.org/en/documentation/installation/)
